@@ -1,0 +1,80 @@
+composer create project --prefer-dist laravel/laravel hdcevents "8.*"
+	--prefer-dist dará preferência ao pacote de distribuição daquela dependência caso disponível.
+	É a opção padrão caso você esteja referenciando no seu composer.json uma versão estável daquele pacote.
+
+instalar node js no computador
+
+composer require laravel/ui:*
+
+php artisan ui bootstrap --auth
+
+npm install
+
+npm run dev
+
+php artisan make:controller EventController
+
+php artisan make:migration create_events_table
+
+php artisan migrate:status
+
+php artisan migrate
+
+php artisan make:model Event
+
+-------------------------------------------------------------------
+
+*Adicionado coluna image na tabela 'events'*
+
+php artisan make:migration add_image_to_events_table
+
+php artisan migrate
+
+-------------------------------------------------------------------
+
+*Adicionado coluna items na tabela 'events'*
+
+php artisan make:migration add_items_to_events_table
+
+php artisan migrate
+
+-------------------------------------------------------------------
+
+*Adicionado coluna date na tabela 'events'*
+
+php artisan make:migration add_date_to_events_table
+
+php artisan migrate
+
+-------------------------------------------------------------------
+
+*Adicionado coluna user_id na tabela 'events'*
+
+php artisan make:migration add_user_id_to_events_table
+
+php artisan migrate
+
+------------------------------------------------------------------
+
+*criando tabela event_user
+
+php artisan make:migration create_event_user_table
+
+php artisan migrate
+
+============================================================================================================================
+
+					*** Erro ao editar e salvar o formulário editado (update) ***
+
+(mensagem de erro no browser)
+
+Illuminate\Database\Eloquent\MassAssignmentException
+Add [_token] to fillable property to allow mass assignment on [App\Models\Event].
+http://127.0.0.1:8000/events/update/3
+
+(solução)
+
+na model, adicionar o seguinte atributo:
+protected $guarded = [];
+
+=============================================================================================================================
